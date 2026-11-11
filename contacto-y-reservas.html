@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Reservas - Kiosko Fernando</title>
+    <!-- Corregido el enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="contacto-y-reservas.css">
+</head>
+<body>
+    
+    <!-- Encabezado corporativo -->
+    <header>
+         <a href="secundaria.html" class="logo">
+        <img src="imagenes/LOGO.png" alt="Logo Kiosko Fernando">
+    </a>
+        <nav>
+            <ul>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="carta-vinos.html">Carta de vinos</a></li>
+                <li><a href="contacto-y-reservas.html" class="activo">Contacto y reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <h1 class="titulo-principal">Contacto y Reservas</h1>
+
+        <!-- Contenedor flexible para poner mapa y formulario en línea -->
+        <section class="seccion-reserva">
+
+            <!-- 1. Mapa de Google incrustado -->
+            <div class="mapa-google">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.5966779438996!2d-1.134547923616686!3d37.98642230043128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63820253503f8d%3A0x7d022fa97330c6a5!2sMurcia!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+           
+            <form action="#" method="POST" class="formulario-contacto">
+                <h2>Reserva tu mesa</h2>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="600 000 000" required>
+
+                <label for="fecha">Fecha de reserva:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required>
+
+                
+                <label for="espacio">Espacio en barra (8 disponibles):</label>
+                <select id="espacio" name="espacio" required>
+                    <option value="" disabled selected>Selecciona tu espacio</option>
+                    <option value="1">Espacio 1</option>
+                    <option value="2">Espacio 2</option>
+                    <option value="3">Espacio 3</option>
+                    <option value="4">Espacio 4</option>
+                    <option value="5">Espacio 5</option>
+                    <option value="6">Espacio 6</option>
+                    <option value="7">Espacio 7</option>
+                    <option value="8">Espacio 8</option>
+                </select>
+
+                <label for="comentarios">Comentarios adicionales:</label>
+                <textarea id="comentarios" name="comentarios" rows="3" placeholder="Peticiones o alergias"></textarea>
+
+                <button type="submit" id="btn-enviar">Enviar reserva</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- Footer corporativo -->
+    <!-- Footer -->
+    <footer>
+        <div class="footer-sitio">Kiosko Fernando</div>
+        <div class="footer-legal">Todos los derechos reservados &copy; 2024</div>
+            <ul>
+                <li>Instagram</li>
+                <li>TikTok</li>
+                <li>Facebook</li>
+            </ul>
+    </footer>
+
+</body>
+</html>

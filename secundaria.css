@@ -1,0 +1,211 @@
+/* ========================================================
+   ESTILOS GENERALES Y RESET
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFDF7;
+    color: #333;
+}
+
+/* ========================================================
+   HEADER 
+   ======================================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFDF7;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0a2540;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.activo {
+    color: #D75235;
+}
+
+/* ========================================================
+   CONTENEDOR DE CARDS (FLEXBOX EN LÍNEA)
+   ======================================================== */
+
+.contenedor-cards {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 40px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 600%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Todo el contenido envuelto en el enlace */
+.enlace-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    padding: 25px 20px 30px;
+    height: 100%;
+}
+
+/* Contenedor cuadrado negro de la imagen SVG */
+.cuadro-svg {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Tamaño y color inicial del vector SVG */
+.icono-svg {
+    width: 100px;
+    height: 100px;
+    fill: #ffffff;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+/* Textos dentro de la card */
+.enlace-card h2 {
+    font-size: 20px;
+    color: #D75235;
+    margin-bottom: 10px;
+}
+
+.enlace-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ========================================================
+   REQUISITO: CAMBIO DE COLOR DEL SVG AL PASAR EL RATÓN
+   ======================================================== */
+#card-menu:hover .icono-svg {
+    fill: #e5a93b; 
+    transform: scale(1.08);
+}
+
+#card-vinos:hover .icono-svg {
+    fill: #a51d2d; 
+    transform: scale(1.08);
+}
+
+#card-contacto:hover .icono-svg {
+    fill: #2a75d3; 
+    transform: scale(1.08);
+}
+
+/* ========================================================
+   REQUISITO: PUNTEROS PERSONALIZADOS POR CADA SECCIÓN
+   ======================================================== */
+#card-menu {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%238c2d19' d='M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7z'/%3E%3C/svg%3E") 4 4, pointer;
+}
+
+#card-vinos {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%238c2d19' d='M6 3v6c0 2.97 2.16 5.43 5 5.91V19H8v2h8v-2h-3v-4.09c2.84-.48 5-2.94 5-5.91V3H6z'/%3E%3C/svg%3E") 4 4, pointer;
+}
+
+#card-contacto {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%238c2d19' d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z'/%3E%3C/svg%3E") 4 4, pointer;
+}
+
+/* ========================================================
+   FOOTER (DESKTOP FIRST)
+   ======================================================== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+
+/* ========================================================
+   ADAPTACIÓN MÓVIL (<= 720px)
+   ======================================================== */
+@media (max-width: 720px) {
+
+    /* Header: logo arriba y navegación abajo, ambos centrados */
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    /* Cards pasan a situarse unas debajo de las otras */
+    .contenedor-cards {
+        flex-direction: column;
+        padding: 25px 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    /* Footer adaptado */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+}

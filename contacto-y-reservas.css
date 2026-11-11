@@ -1,0 +1,220 @@
+/* ========================================================
+   ESTILOS GENERALES
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* ========================================================
+   HEADER 
+   ======================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFDF7;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0a2540;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.activo {
+    color: #D75235;
+}
+
+/* ========================================================
+   CONTENEDOR PRINCIPAL
+   ======================================================== */
+.contenedor-principal {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.titulo-principal {
+    text-align: center;
+    color: #D75235;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* ========================================================
+   MAPA Y FORMULARIO EN LÍNEA (FLEXBOX)
+   ======================================================== */
+.seccion-reserva {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px; /* Separación con el footer */
+}
+
+/* Contenedor del mapa */
+.mapa-google {
+    flex: 1;
+    min-height: 480px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.mapa-google iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Contenedor del formulario */
+.formulario-contacto {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-contacto h2 {
+    color: #0a2540;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0a2540;
+    padding-bottom: 6px;
+}
+
+.formulario-contacto label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border-color 0.2s;
+}
+
+/* Pseudo-clase */
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+    border-color: #2E4A6C75;
+    background-color: #ffffff;
+}
+
+/* ========================================================
+   BOTÓN CON SOMBRA, HOVER Y CLIC (:ACTIVE)
+   ======================================================== */
+#btn-enviar {
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #D75235;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); 
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+#btn-enviar:hover {
+    background-color: #2E4A6C75;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+#btn-enviar:active {
+    background-color: #2E4A6C75;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================================
+   FOOTER 
+   ======================================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+
+/* ========================================================
+   ADAPTACIÓN MÓVIL (<= 720px)
+   ======================================================== */
+@media (max-width: 720px) {
+
+    /* Header centrado verticalmente */
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    /* El mapa y el formulario pasan a apilarse en una columna */
+    .seccion-reserva {
+        flex-direction: column;
+    }
+
+    .mapa-google {
+        min-height: 280px;
+    }
+
+    /* Footer en móvil */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+}

@@ -1,0 +1,177 @@
+/* ========================================================
+   ESTILOS GENERALES
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* ========================================================
+   HEADER
+   ======================================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFDF7;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0a2540;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.activo {
+    color: #D75235;
+}
+
+/* ========================================================
+   CONTENEDOR PRINCIPAL
+   ======================================================== */
+
+/* Contenedor principal */
+.contenedor-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.titulo-principal {
+    text-align: center;
+    color: #D75235;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* ========================================================
+   CATÁLOGO EN BLOQUES DE 2 CON FLEXBOX
+   ======================================================== */
+.catalogo-vinos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 30px 20px;
+    margin-bottom: 55px; /* Separación con el footer */
+}
+
+/* Cada tarjeta ocupa el 48% para salir de 2 en 2 */
+.item-vino {
+    width: 48%;
+    background: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    
+}
+
+
+/* Cuadro cuadrado negro o contenedor de imagen */
+.cuadro-foto {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene proporción cuadrada exacta */
+    background-color: #000000;
+}
+
+.cuadro-foto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Textos bajo la imagen */
+.info-vino {
+    padding: 15px;
+    text-align: center;
+}
+
+.info-vino h3 {
+    font-size: 16px;
+    color: #0a2540;
+    margin-bottom: 6px;
+}
+
+.info-vino .precio {
+    font-size: 15px;
+    font-weight: bold;
+    color: #D75235;
+}
+
+/* ========================================================
+   FOOTER 
+   ======================================================== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    color: #DAE1E7;
+    padding: 20px 40px;
+    
+}
+/* ========================================================
+   ADAPTACIÓN MÓVIL (=<
+   ======================================================== */
+@media (max-width: 720px) {
+
+    /* Header centrado verticalmente */
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    /* Pasa a bloque individual (1 elemento por fila) */
+    .item-vino {
+        width: 100%;
+    }
+
+    /* Footer adaptado */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+}

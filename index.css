@@ -1,0 +1,137 @@
+/* ========================================================
+   ESTILOS GENERALES Y RESET
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFDF7;
+    color: #333;
+}
+
+/* ========================================================
+   CTA Y PARALLAX CON ANIMACIÓN
+   ======================================================== */
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('imagenes/FONDO.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cta-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 30px;
+    border-radius: 8px;
+    width: 460px;
+
+}
+
+/* ========================================================
+   ESTILOS Y REGLA DE ANIMACIÓN PARA EL ICONO/LOGO
+   ======================================================== */
+.icono-animado {
+    display: inline-block;
+    font-size: 40px;          
+    margin-bottom: 15px;
+    animation: flotar 2.2s infinite ease-in-out;
+}
+
+/* Si dentro de .icono-animado pones una etiqueta <img> */
+.icono-animado img {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Regla @keyframes para que suba y baje suavemente */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.cta-container h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.cta-container p {
+    font-size: 15px;
+    color: #DAE1E7;
+    margin-bottom: 25px;
+}
+
+/* ========================================================
+   BOTONES Y EFECTOS DE PULSACIÓN 
+   ======================================================== */
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#boton1, #boton2 {
+    font-size: 17px;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: #DAE1E7;
+    color: #333333;
+    border: none;
+    border-radius: 8px;
+    min-width: 130px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el cursor */
+#boton1:hover, #boton2:hover {
+    background-color: #D75235;
+}
+
+/* Efecto de pulsación al hacer clic (temario: scale) */
+#boton1:active, #boton2:active {
+    transform: scale(0.90);
+}
+
+/* ========================================================
+   ADAPTACIÓN MÓVIL (<= 720px)
+   ======================================================== */
+@media (max-width: 720px) {
+    .cta-container {
+        width: 90%;
+        padding: 30px 15px;
+    }
+
+    .contenedor-botones {
+        flex-direction: column;
+    }
+
+    #boton1, #boton2 {
+        width: 100%;
+    }
+}
+
+

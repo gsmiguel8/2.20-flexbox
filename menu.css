@@ -1,0 +1,193 @@
+/* ========================================================
+   ESTILOS GENERALES 
+   ======================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFDF7;
+    color: #333;
+}
+
+/* ========================================================
+   HEADER
+   ======================================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFDF7;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0a2540;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.activo {
+    color: #D75235;
+}
+
+/* ========================================================
+   CATEGORIA Y CONTENEDOR PRINCIPAL
+   ======================================================== */
+
+.categoria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.titulo-principal {
+    text-align: center;
+    color: #D75235;
+    margin-bottom: 25px;
+}
+
+.menu {
+    margin-bottom: 55px; /* Distancia con el footer */
+}
+
+/* Bloques de 4 por fila en escritorio ancho */
+.plato {
+    width: calc(25% - 15px);
+    background: #ffffff;
+    border-radius: 6px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+/* Se agranda 1.1 veces cuando el cursor pasa por encima */
+.plato:hover {
+    transform: scale(1.1);
+    
+}
+
+/* Cuadrado de la imagen */
+.cuadro-foto {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #000000;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.cuadro-foto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Texto de descripción / ingredientes */
+.plato p {
+    font-size: 13px;
+    color: #0a2540;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Precio del plato */
+.plato span {
+    font-size: 15px;
+    font-weight: bold;
+    color: #D75235;
+    text-align: center;
+    display: block;
+}
+
+/* ========================================================
+   FOOTER
+   ======================================================== */
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+
+
+/* ========================================================
+   RESPONSIVE: ESCALONADO A 3, 2 Y 1 BLOQUE
+   ======================================================== */
+
+
+   @media (max-width: 992px) {
+    .plato {
+        width: calc(33.333% - 14px);
+    }
+}
+
+/* Bloques de 2 */
+@media (max-width: 720px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    .plato {
+        width: calc(50% - 10px);
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+}
+
+/* Unico bloque */
+@media (max-width: 480px) {
+    .plato {
+        width: 100%;
+    }
+}
